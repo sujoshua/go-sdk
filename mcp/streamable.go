@@ -1372,7 +1372,6 @@ func (c *streamableServerConn) acquireStream(ctx context.Context, w http.Respons
 		//   https://github.com/golang/go/issues/31125
 		//   https://github.com/caddyserver/caddy/issues/4247
 		w.WriteHeader(http.StatusOK)
-		fmt.Fprint(w, ": ok\n\n")
 		rc := http.NewResponseController(w)
 		// Ignore returned error as flushing is best-effort.
 		_ = rc.Flush()
